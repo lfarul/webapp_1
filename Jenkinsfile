@@ -66,7 +66,7 @@ pipeline {
      stage("Run Docker container"){
       steps{
         echo "Running Docker container"
-        bat 'docker run -d -p 8282:5001  lfarul/webapp_1:1' 
+        bat 'docker run -d -p 8282:9050  lfarul/webapp_1:1' 
       }
     }
 	    /*
