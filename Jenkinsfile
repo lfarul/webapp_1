@@ -42,7 +42,8 @@ pipeline {
 	        bat 'dotnet test'
 	    }
 	  }
-	    
+		  
+	    /*
 	        //framework-dependent publishing - czyli publikacja aplikacji zależnych od platformy //1 plik
 	    stage ('Publish framework-dependent') {
 	      steps {
@@ -50,7 +51,7 @@ pipeline {
 	        bat 'dotnet publish -f netcoreapp3.0 -c Release --self-contained false'
 	    }
 	  }
-	    /*
+	    
 	    //self-contained publishing - czyli publikacja aplikacji samowystarczalnej z całym środowiskiem uruchomieniowym dla win10-x64 // ponad 140 plików ok 90MB
 	    stage ('Publish self-contained') {
 	      steps {
