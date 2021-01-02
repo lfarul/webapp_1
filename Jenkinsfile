@@ -51,7 +51,7 @@ pipeline {
 	        bat 'dotnet publish -f netcoreapp3.1 -c Release --self-contained false'
 	    }
 	  }
-		  /*
+		  
 		 // Buduje obraz Dockera dla Docker Registry 
 		stage("Build Docker image for Docker Hub"){
 		  steps{
