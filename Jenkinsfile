@@ -51,6 +51,15 @@ pipeline {
 	        bat 'dotnet publish -f netcoreapp3.1 -c Release --self-contained false'
 	    }
 	  }
+		  
+		 // Buduje obraz Dockera dla Docker Registry 
+		stage("Build Docker image for Docker Hub"){
+		  steps{
+		    echo "Building Docker image for Docker Registry..."
+		    // lfarul to mój username na dockerhub i musi być w nazwie image / nazwa obrazu : wersja obrazu
+		    bat 'docker build -t lfarul/webapp_1:1 .'
+		}
+	}
 	    /*
 	    //self-contained publishing - czyli publikacja aplikacji samowystarczalnej z całym środowiskiem uruchomieniowym dla win10-x64 // ponad 140 plików ok 90MB
 	    stage ('Publish self-contained') {
@@ -59,13 +68,13 @@ pipeline {
 	        bat 'dotnet publish -c Release -r win10-x64'
 	    }
 	  }
-	  */
+	  
 	    stage ('Run') {
 	      steps {
 	        echo "Running the project...."
 	        bat 'dotnet run'
 	    }
 	  }  
-	    
+	    */
 	}
 	}
