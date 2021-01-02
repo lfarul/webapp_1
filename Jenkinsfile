@@ -66,10 +66,9 @@ pipeline {
      stage("Run Docker container"){
       steps{
         echo "Running Docker container"
-        bat 'docker run -d lfarul/webapp_1:1' 
+        bat 'docker run -d -p 8282:5001 lfarul/webapp_1:1' 
       }
     }
-		  /*-p 8282:9050*/
 	    /*
 	    //self-contained publishing - czyli publikacja aplikacji samowystarczalnej z całym środowiskiem uruchomieniowym dla win10-x64 // ponad 140 plików ok 90MB
 	    stage ('Publish self-contained') {
