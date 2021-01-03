@@ -12,7 +12,7 @@ pipeline {
 	  }
 	  */
 	  
-	  
+	  /*
 	  stage ('Restore packages') {
 	    steps {
 	       echo "Restoring packages...."
@@ -51,7 +51,7 @@ pipeline {
 	        bat 'dotnet publish -f netcoreapp3.1 -c Release --self-contained false'
 	    }
 	  }
-		  
+	*/  
 		 // Buduje obraz Dockera dla Docker Registry 
 		stage("Build Docker image for Docker Hub"){
 		  steps{
@@ -66,7 +66,7 @@ pipeline {
      stage("Run Docker container"){
       steps{
         echo "Running Docker container"
-        bat 'docker run -d -p 8282:5001 lfarul/webapp_1:1' 
+        bat 'docker run -d -p 8282:80 lfarul/webapp_1:1' 
       }
     }
 	    /*
